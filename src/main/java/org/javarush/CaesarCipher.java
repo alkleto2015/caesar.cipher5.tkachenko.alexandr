@@ -1,9 +1,9 @@
 package org.javarush;
 
-public class CaesarCipher {
+class CaesarCipher {
     private static final int ALPHABET_LETTERS = 26;
     public String encryptData(String comingFileWithContents, int key) {
-        StringBuffer encryptedResult = new StringBuffer();
+        StringBuilder encryptedResult = new StringBuilder();
         key = (key % ALPHABET_LETTERS);                                              // деление по модулю-оператор-modulo- (%N); ограничитель диапазона сдвига до 26-(колличество букв латинского алфавита);
         for (int counter = 0; counter < comingFileWithContents.length(); counter++) {
             char charOfSymbol = comingFileWithContents.charAt(counter);
@@ -22,7 +22,7 @@ public class CaesarCipher {
         return encryptedResult.toString();
     }
     public String decryptData(String comingFileWithContents, int key) {
-        StringBuffer decryptedResult = new StringBuffer();
+        StringBuilder decryptedResult = new StringBuilder();
         key = (key % ALPHABET_LETTERS);                                                       // деление по модулю ; ограничиваем диапазон сдвига 26-ю буквами алфавита
         for (int counter = 0; counter < comingFileWithContents.length(); counter++) {
             char charOfSymbol = comingFileWithContents.charAt(counter);

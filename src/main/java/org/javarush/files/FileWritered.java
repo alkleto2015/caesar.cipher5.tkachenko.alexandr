@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FileWritered {                          // мы что то зашифровали- нам надо записать в файл, и будет метод WRITE TO FILE
+public class FileWritered {
     public void writeToFile(String filePath, String content) {
         try {
             Files.write(Paths.get(filePath), content.getBytes());

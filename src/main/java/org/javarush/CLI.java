@@ -2,7 +2,7 @@ package org.javarush;
 import org.javarush.files.FileService;
 import java.util.Scanner;
 
-public class CLI {
+class CLI {
     private final Scanner console;
     private final CaesarCipher cipher;
     private final UkrainianCaesarCipher uaCipher;
