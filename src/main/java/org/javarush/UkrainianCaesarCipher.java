@@ -48,7 +48,7 @@ public class UkrainianCaesarCipher {       // Украинский алфави�
         return decryptedResult.toString();
     }
     public void bruteForceDecrypt(String comingFileWithContents) {
-        System.out.println("Возможные варианты расшифровки:");
+        System.out.println("ВОЗМОЖНЫЕ ВАРИАНТЫ РАСШИФРОВКИ:");
         for (int key = 1; key < ALPHABET_SIZE; key++) {
             String possibleDecryption = decryptData(comingFileWithContents, key);
             System.out.println("Ключ " + key + ": " + possibleDecryption);
