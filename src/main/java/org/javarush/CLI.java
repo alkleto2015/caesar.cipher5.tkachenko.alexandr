@@ -17,6 +17,7 @@ class CLI {
     public void workWithCLI() {
         while (true) {
             System.out.println("SELECT THE OPERATION NUMBER AND ENTER IT:");
+            System.out.println("0 - TO WORK CORRECTLY, PRESS - 0, RESTART THE CLASS");
             System.out.println("1 - ENCRYPT");
             System.out.println("2 - DECRYPT");
             System.out.println("3 - BRUTEFORCE");
@@ -27,6 +28,9 @@ class CLI {
             System.out.println("8 - PLEASE PRESS - 8, EXIT");
             String choice = console.nextLine();
             switch (choice) {
+                case "0":
+                    System.out.println("Exiting...");
+                    return;
                 case "1":
                     handleEncryption();
                     break;
@@ -88,7 +92,7 @@ class CLI {
 
     private void handleEncryptionUA() {
         System.out.println("ENTER THE FILE PATH TO ENCRYPT (UKRAINIAN):");
-        System.out.println("EXTRA HELP : FILE PATH TO DECRYPT == C:\\Users\\setusers\\javarush\\caesar.cipher5v.tkachenko.alexandr\\test");
+        System.out.println("EXTRA HELP : FILE PATH TO DECRYPT == C:\\Users\\setusers\\javarush\\caesar.cipher5v.tkachenko.alexandr\\ukrainian test");
         String filePath = console.nextLine();
         System.out.println("ENTER THE ENCRYPTION KEY:");
         int key = Integer.parseInt(console.nextLine());
