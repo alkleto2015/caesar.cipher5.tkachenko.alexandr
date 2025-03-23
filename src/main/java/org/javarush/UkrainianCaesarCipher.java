@@ -1,4 +1,5 @@
 package org.javarush;
+
 class UkrainianCaesarCipher {       // Украинский алфавит (без учёта символов, не являющихся буквами)
     private static final String ALPHABET = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
     private static final int ALPHABET_SIZE = 33; //ALPHABET.length(); // 33 букви

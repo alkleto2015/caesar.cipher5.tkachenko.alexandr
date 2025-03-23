@@ -1,6 +1,5 @@
 package org.javarush.files;
 
-
 public class FileService {
     private final FileReadered fileReadered;
     private final FileWritered fileWritered;

@@ -7,8 +7,7 @@ class CLI {
     private final CaesarCipher cipher;
     private final UkrainianCaesarCipher uaCipher;
     public final FileService fileService;
-
-     public CLI() {
+    public CLI() {
         this.console = new Scanner(System.in);
         this.cipher = new CaesarCipher();
         this.uaCipher = new UkrainianCaesarCipher();
@@ -89,7 +88,6 @@ class CLI {
         String fileData = fileService.readDataFromFile(filePath);
         cipher.bruteForceDecrypt(fileData);
     }
-
     private void handleEncryptionUA() {
         System.out.println("ENTER THE FILE PATH TO ENCRYPT (UKRAINIAN):");
         System.out.println("EXTRA HELP : FILE PATH TO DECRYPT == C:\\Users\\setusers\\javarush\\caesar.cipher5v.tkachenko.alexandr\\ukrainian test");
