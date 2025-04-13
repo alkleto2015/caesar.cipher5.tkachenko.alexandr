@@ -17,6 +17,7 @@ public class Runner {
                     return;
                 }
             }
+
             CaesarCipher cipher = new CaesarCipher();
             try {
                 String comingFileWithContents = new String(Files.readAllBytes(Paths.get(filePath)));  // читаем содержимое файла
@@ -39,8 +40,7 @@ public class Runner {
                 } else if ("BRUTEFORCE_UA".equalsIgnoreCase(command)) {
                     UkrainianCaesarCipher uaCipher = new UkrainianCaesarCipher();
                     uaCipher.bruteForceDecrypt(comingFileWithContents);
-                } else if (args.length == 0) {
-                    new CLI().workWithCLI();
+
                 } else {
                     System.out.println("Unknown command: " + command);
                 }

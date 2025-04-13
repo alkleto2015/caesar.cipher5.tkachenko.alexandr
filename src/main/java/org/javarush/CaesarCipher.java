@@ -10,9 +10,9 @@ class CaesarCipher {
             if (Character.isLetter(charOfSymbol)) {
                 char mainSymbol = Character.isUpperCase(charOfSymbol) ? 'A' : 'a';
                 //формула шифрования Цезаря с модульной арифметикой  C =((P−A+K)%modN)+ A;  P = charOfSymbol; A = mainSymbol; C =((charOfSymbol - mainSymbol + key) % ALPHABET_LETTERS) + mainSymbol;//
-                int displaceSymbolFromMainValue = (charOfSymbol - mainSymbol);      //смещение символа от начала алфавита- от основного значения;
-                int shiftPlusKey = (displaceSymbolFromMainValue + key);             //  добавляем КЛЮЧ,к смещению от начала алфавита,и получаем смещение с ключом ;
-                int moduleOperation = (shiftPlusKey % ALPHABET_LETTERS);            // операция по модулю (деление с остатком на 26 -( 26-это колличество букв латинского алфавита)- чтобы двигаться удобнее по алфавиту
+                int displaceSymbolFromMainValue = charOfSymbol - mainSymbol;      //смещение символа от начала алфавита- от основного значения;
+                int shiftPlusKey = displaceSymbolFromMainValue + key;             //  добавляем КЛЮЧ,к смещению от начала алфавита,и получаем смещение с ключом ;
+                int moduleOperation = shiftPlusKey % ALPHABET_LETTERS;            // операция по модулю (деление с остатком на 26 -( 26-это колличество букв латинского алфавита)- чтобы двигаться удобнее по алфавиту
                 char encryptedChar = (char) (moduleOperation + mainSymbol);         // преобразуем обратно в char символ, двигаем символ в пределах латинского алфавита;
                 encryptedResult.append(encryptedChar);
             } else {
@@ -29,7 +29,7 @@ class CaesarCipher {
             if (Character.isLetter(charOfSymbol)) {
                 char mainSymbol = Character.isUpperCase(charOfSymbol) ? 'A' : 'a';
                 //модульная арифметика, формула расшифрования Цезаря P=((C−A−K+N)%modN)+A; С = charOfSymbol; A = mainSymbol; P =((charOfSymbol - mainSymbol - key + ALPHABET_LETTERS) % ALPHABET_LETTERS) + mainSymbol;
-                int displaceSymbolFromMainValue = (charOfSymbol - mainSymbol);
+                int displaceSymbolFromMainValue = charOfSymbol - mainSymbol;
                 int shiftMinusKey = (displaceSymbolFromMainValue - key + ALPHABET_LETTERS) % ALPHABET_LETTERS; // Вычитаем ключ, избегаем отрицательных значений
                 char decryptedChar = (char) (shiftMinusKey + mainSymbol);  //преобразуем опять в char символ, и двигаем символ в пределах латинского алфавита.
                 decryptedResult.append(decryptedChar);
