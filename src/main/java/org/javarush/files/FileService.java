@@ -8,9 +8,11 @@ public class FileService {
         this.fileReadered = new FileReader();
         this.fileWritered = new FileWriter();
     }
-    String readDataFromFile(String filePath) {
+
+    public String readDataFromFile(String filePath) {
         return fileReadered.readDataFromFile(filePath);
     }
+
     public void writeToFile(String filePath, String content) {
         fileWritered.writeToFile(filePath, content);
     }

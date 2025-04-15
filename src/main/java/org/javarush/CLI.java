@@ -13,6 +13,7 @@ class CLI {
         this.uaCipher = new UkrainianCaesarCipher();
         this.fileService = new FileService();
     }
+
     public void workWithCLI() {
         while (true) {
             System.out.println("SELECT THE OPERATION NUMBER AND ENTER IT:");
@@ -59,9 +60,9 @@ class CLI {
             }
         }
     }
+
     private void handleEncryption() {
         System.out.println("ENTER THE FILE PATH TO ENCRYPT:");
-        System.out.println("EXTRA HELP : FILE PATH TO DECRYPT == C:\\Users\\setusers\\javarush\\caesar.cipher5v.tkachenko.alexandr\\test");
         String filePath = console.nextLine();
         System.out.println("ENTER THE ENCRYPTION KEY:");
         int key = Integer.parseInt(console.nextLine());
@@ -71,6 +72,7 @@ class CLI {
         System.out.println("Encryption complete. SAVED AS: " + filePath + ".encrypted");
         System.out.println(encryptedData);  // не обязательно к выполнению,но работает как индикатор:- если текст отобразился на экране-то корректная работа,правильный путь и правильная папка. если нет- значит ошибка в пути и папку придется искать на диске;
     }
+
     private void handleDecryption() {
         System.out.println("ENTER THE FILE PATH TO DECRYPT:");
         String filePath = console.nextLine();
@@ -82,15 +84,16 @@ class CLI {
         System.out.println("Decryption complete. SAVED AS : " + filePath + ".decrypted");
         System.out.println(decryptedData);   // не обязательно к выполнению,(дополнит.индикатор)-если текст отобразился на экране,значит правильный путь,правильная папка,без конфликтов,работает корректно;
     }
+
     private void handleBruteForce() {
         System.out.println("ENTER THE FILE PATH TO BRUTEFORCE DECRYPT :");
         String filePath = console.nextLine();
         String fileData = fileService.readDataFromFile(filePath);
         cipher.bruteForceDecrypt(fileData);
     }
+
     private void handleEncryptionUA() {
         System.out.println("ENTER THE FILE PATH TO ENCRYPT (UKRAINIAN):");
-        System.out.println("EXTRA HELP : FILE PATH TO DECRYPT == C:\\Users\\setusers\\javarush\\caesar.cipher5v.tkachenko.alexandr\\ukrainian test");
         String filePath = console.nextLine();
         System.out.println("ENTER THE ENCRYPTION KEY:");
         int key = Integer.parseInt(console.nextLine());
@@ -100,6 +103,7 @@ class CLI {
         System.out.println("Encryption complete. SAVED AS: " + filePath + ".ua_encrypted");
         System.out.println(encryptedData);   // не обязательно к выполнению,(дополнит.индикатор):- если текст отобразился на экране,значит правильный путь,правильная папка,без конфликтов, работает корректно;
     }
+
     private void handleDecryptionUA() {
         System.out.println("ENTER THE FILE PATH TO DECRYPT (UKRAINIAN):");
         String filePath = console.nextLine();
@@ -111,6 +115,7 @@ class CLI {
         System.out.println("Decryption complete. SAVED AS: " + filePath + ".ua_decrypted");
         System.out.println(decryptedData);    // не обязательно к выполнению,(дополнит.индикатор):- если текст отобразился на экране,значит правильный путь,правильная папка,без конфликтов, работает корректно;
     }
+
     private void handleBruteForceUA() {
         System.out.println("ENTER THE FILE PATH TO BRUTEFORCE DECRYPT (UKRAINIAN):");
         String filePath = console.nextLine();
