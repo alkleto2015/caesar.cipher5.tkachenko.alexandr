@@ -21,14 +21,13 @@ class CLI {
             System.out.println("1 - ENCRYPT");
             System.out.println("2 - DECRYPT");
             System.out.println("3 - BRUTEFORCE");
-            System.out.println("4 - TO WORK CORRECTLY, PRESS - 4, RESTART THE CLASS");
-            System.out.println("5 - ENCRYPT (UKRAINIAN)");
-            System.out.println("6 - DECRYPT (UKRAINIAN)");
-            System.out.println("7 - BRUTEFORCE (UKRAINIAN)");
-            System.out.println("8 - PLEASE PRESS - 8, EXIT");
+            System.out.println("4 - ENCRYPT (UKRAINIAN)");
+            System.out.println("5 - DECRYPT (UKRAINIAN)");
+            System.out.println("6 - BRUTEFORCE (UKRAINIAN)");
+            System.out.println("7 - PLEASE PRESS - 7, EXIT");
             String choice = console.nextLine();
             switch (choice) {
-                case "0":
+                case "0", "7":
                     System.out.println("Exiting...");
                     return;
                 case "1":
@@ -40,22 +39,15 @@ class CLI {
                 case "3":
                     handleBruteForce();
                     break;
-                case "4":
-                    System.out.println("Exiting...");
-                    return;
-                case "5" :
+                case "4" :
                     handleEncryptionUA();
-                    break;
-                case "6":
+                case "5":
                     handleDecryptionUA();
                     break;
-                case "7":
+                case "6":
                     handleBruteForceUA();
                     break;
-                case "8":
-                    System.out.println("Exiting...");
-                    return;
-                default:
+                default    :
                     System.out.println("Invalid option. Try again.");
             }
         }
