@@ -4,7 +4,7 @@ class UkrainianCaesarCipher {       // Украинский алфавит (бе
     private static final String ALPHABET = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
     private static final int ALPHABET_SIZE = 33; //ALPHABET.length(); // 33 букви
 
-    public String encryptData(String comingFileWithContents, int key) {
+    String encryptData(String comingFileWithContents, int key) {
         StringBuilder encryptedResult = new StringBuilder();
         key = (key % ALPHABET_SIZE);
         for (int counter = 0; counter < comingFileWithContents.length(); counter++) {
@@ -24,7 +24,8 @@ class UkrainianCaesarCipher {       // Украинский алфавит (бе
         }
         return encryptedResult.toString();
     }
-    public String decryptData(String comingFileWithContents, int key) {
+
+    String decryptData(String comingFileWithContents, int key) {
         StringBuilder decryptedResult = new StringBuilder();
         key = (key % ALPHABET_SIZE);
         for (int counter = 0; counter < comingFileWithContents.length(); counter++) {
@@ -44,7 +45,8 @@ class UkrainianCaesarCipher {       // Украинский алфавит (бе
         }
         return decryptedResult.toString();
     }
-    public void bruteForceDecrypt(String comingFileWithContents) {
+
+    void bruteForceDecrypt(String comingFileWithContents) {
         System.out.println("ВОЗМОЖНЫЕ ВАРИАНТЫ РАСШИФРОВКИ:");
         for (int key = 1; key < ALPHABET_SIZE; key++) {
             String possibleDecryption = decryptData(comingFileWithContents, key);

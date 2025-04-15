@@ -2,9 +2,10 @@ package org.javarush;
 
 class CaesarCipher {
     private static final int ALPHABET_LETTERS = 26;
+
     public String encryptData(String comingFileWithContents, int key) {
         StringBuilder encryptedResult = new StringBuilder();
-        key = (key % ALPHABET_LETTERS);                                              // деление по модулю-оператор-modulo- (%N); ограничитель диапазона сдвига до 26-(колличество букв латинского алфавита);
+        key = key % ALPHABET_LETTERS;                                              // деление по модулю-оператор-modulo- (%N); ограничитель диапазона сдвига до 26-(колличество букв латинского алфавита);
         for (int counter = 0; counter < comingFileWithContents.length(); counter++) {
             char charOfSymbol = comingFileWithContents.charAt(counter);
             if (Character.isLetter(charOfSymbol)) {
@@ -21,6 +22,7 @@ class CaesarCipher {
         }
         return encryptedResult.toString();
     }
+
     public String decryptData(String comingFileWithContents, int key) {
         StringBuilder decryptedResult = new StringBuilder();
         key = (key % ALPHABET_LETTERS);                                                       // деление по модулю ; ограничиваем диапазон сдвига 26-ю буквами алфавита
@@ -39,6 +41,7 @@ class CaesarCipher {
         }
         return decryptedResult.toString();
     }
+
     public void bruteForceDecrypt(String comingFileWithContents) {
         System.out.println("Possible decoding option by Brute-force:");
         for (int count = 1; count < ALPHABET_LETTERS; count++) {

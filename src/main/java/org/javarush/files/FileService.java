@@ -1,14 +1,14 @@
 package org.javarush.files;
 
 public class FileService {
-    private final FileReadered fileReadered;
-    private final FileWritered fileWritered;
+    private final FileReader fileReadered;
+    private final FileWriter fileWritered;
 
     public FileService() {
-        this.fileReadered = new FileReadered();
-        this.fileWritered = new FileWritered();
+        this.fileReadered = new FileReader();
+        this.fileWritered = new FileWriter();
     }
-    public String readDataFromFile(String filePath) {
+    String readDataFromFile(String filePath) {
         return fileReadered.readDataFromFile(filePath);
     }
     public void writeToFile(String filePath, String content) {

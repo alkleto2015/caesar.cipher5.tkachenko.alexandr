@@ -3,8 +3,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FileWritered {
-    public void writeToFile(String filePath, String content) {
+class FileWriter {
+     void writeToFile(String filePath, String content) {
         try {
             Files.write(Paths.get(filePath), content.getBytes());
         } catch (IOException e) {
